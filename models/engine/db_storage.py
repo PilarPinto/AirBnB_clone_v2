@@ -62,8 +62,7 @@ class DBStorage:
     def new(self, obj):
         """Add the object to the current database session
         """
-        if obj:
-            self.__session.add(obj)
+        self.__session.add(obj)
 
     def save(self):
         """Commit all changes of the current database session
@@ -86,3 +85,8 @@ class DBStorage:
         Session = scoped_session(session_fact)
 
         self.__session = Session()
+
+    def close(self):
+        """Closes ORM session
+        """
+        self.__session.close()
