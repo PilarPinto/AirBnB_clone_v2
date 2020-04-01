@@ -14,7 +14,8 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 
 
 class DBStorage:
-
+    """ This is DBStorage class
+    """
     __engine = None
     __session = None
 
