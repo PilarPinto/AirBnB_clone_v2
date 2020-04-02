@@ -64,6 +64,10 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(base_dict['created_at'], str)
         self.assertIsInstance(base_dict['updated_at'], str)
 
+    @unittest.skipIf(os.getenv("HBNB_TYPE_STORAGE") == 'db', 'DB')
+    def test_save_BaseModel(self):
+        "test if save method works"
+        self.base.save()
 
 if __name__ == "__main__":
     unittest.main()
