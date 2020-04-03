@@ -83,6 +83,7 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(type(self.place.longitude), float)
         self.assertEqual(type(self.place.amenity_ids), list)
 
+    @unittest.skipIf(os.getenv("HBNB_TYPE_STORAGE") == 'db', 'DB')
     def test_save_Place(self):
         """test if the save works"""
         self.place.save()
@@ -92,10 +93,6 @@ class TestPlace(unittest.TestCase):
         """test if dictionary works"""
         self.assertEqual('to_dict' in dir(self.place), True)
 
-    @unittest.skipIf(os.getenv("HBNB_TYPE_STORAGE") == 'db', 'DB')
-    def test_save_Place(self):
-        "test if save method works"
-        self.place.save()
 
 if __name__ == "__main__":
     unittest.main()
