@@ -22,7 +22,7 @@ def display_cisfun(text):
 @app.route('/python/', defaults={'text': 'is cool'})
 @app.route('/python/<text>')
 def display_default(text):
-    return 'Python is %s' % escape(text.replace('_', ' '))
+    return 'Python %s' % escape(text.replace('_', ' '))
 
 
 if __name__ == '__main__':
