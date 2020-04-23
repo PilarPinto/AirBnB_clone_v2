@@ -1,8 +1,9 @@
 .places {
         display: flex;
         flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-arond;
         padding: 7px;
+	align-items: flex-start;
 }
 
 .places .places_name{
@@ -89,7 +90,7 @@
 .description {
         scroll-padding-bottom: 10px;
 	margin-left: 3.5px;
-	height:auto;
+	margin-bottom: 30px;
 }
 
 .information p {
